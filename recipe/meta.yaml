@@ -13,26 +13,23 @@ source:
 
 build:
   number: 0
+  entry_points:
+    - ncvue = ncvue.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
     - setuptools >=42
     - setuptools_scm >=3.5
   run:
-    - cartopy
-    - cython
+    - python >=3.8
+    - pykdtree
     - numpy
     - matplotlib-base
     - netcdf4
-    - pykdtree
-    - pyshp
-    - python
-    - scipy
-    - shapely
-    - six
+    - cartopy
     - tk  # [linux]
 
 test:
@@ -44,7 +41,7 @@ app:
   icon: ncvue_icon.png
   summary: ncvue - a minimal GUI for a quick view of netcdf files
   type: desk
-  own_environment: true
+  own_environment: True
 
 about:
   home: https://github.com/mcuntz/ncvue
