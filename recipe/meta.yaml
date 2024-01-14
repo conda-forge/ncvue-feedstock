@@ -1,6 +1,6 @@
 {% set name = "ncvue" %}
-{% set version = "4.1.2" %}
-{% set sha256 = "716f708b1a64a195eb9e19d1909d8d2e0b45f60f97adefcc552f00fe35a51b4b" %}
+{% set version = "4.2" %}
+{% set sha256 = "b98a1ac87e541adef7e759c924f7cabd332289faf0315497dde228481f23505e" %}
 
 
 package:
@@ -12,7 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
+  entry_points:
+    - ncvue = ncvue.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,17 +24,12 @@ requirements:
     - setuptools >=42
     - setuptools_scm >=3.5
   run:
-    - cartopy
-    - cython
+    - python
+    - pykdtree
     - numpy
     - matplotlib-base
     - netcdf4
-    - pykdtree
-    - pyshp
-    - python
-    - scipy
-    - shapely
-    - six
+    - cartopy
     - tk  # [linux]
 
 test:
@@ -40,11 +37,11 @@ test:
     - python -c "import ncvue"  # [not linux]
 
 app:
-    entry: python -m ncvue
-    icon: ncvue_icon.png
-    summary: ncvue - a minimal GUI for a quick view of netcdf files
-    type: desk
-    own_environment: True
+  entry: python -m ncvue
+  icon: ncvue_icon.png
+  summary: ncvue - a minimal GUI for a quick view of netcdf files
+  type: desk
+  own_environment: True
 
 about:
   home: https://github.com/mcuntz/ncvue
