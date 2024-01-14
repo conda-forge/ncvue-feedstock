@@ -19,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - pip
     - setuptools >=42
     - setuptools_scm >=3.5
   run:
-    - python >=3.8
+    - python
     - pykdtree
     - numpy
     - matplotlib-base
