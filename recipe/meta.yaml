@@ -1,6 +1,6 @@
 {% set name = "ncvue" %}
-{% set version = "4.2" %}
-{% set sha256 = "b98a1ac87e541adef7e759c924f7cabd332289faf0315497dde228481f23505e" %}
+{% set version = "4.3" %}
+{% set sha256 = "b55a661de192798293bd144a46af7022136e4981ea8059fa49f35ffc13178470" %}
 
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - ncvue = ncvue.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -41,7 +41,7 @@ app:
   icon: ncvue_icon.png
   summary: ncvue - a minimal GUI for a quick view of netcdf files
   type: desk
-  own_environment: True
+  own_environment: true
 
 about:
   home: https://github.com/mcuntz/ncvue
