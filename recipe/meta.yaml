@@ -13,28 +13,33 @@ source:
 
 build:
   number: 0
+  noarch: python
   entry_points:
     - ncvue = ncvue.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
     - setuptools >=42
     - setuptools_scm >=3.5
   run:
-    - python
-    - pykdtree
+    - python >=3.8
     - numpy
     - matplotlib-base
     - netcdf4
     - cartopy
-    - tk  # [linux]
+    - __linux  # [linux]
+    - __osx    # [osx]
+    - __win    # [win]
+    - tk       # [linux]
 
 test:
+  imports:
+    - ncvue  # [not linux]
   commands:
-    - python -c "import ncvue"  # [not linux]
+    - xvfb-run --auto-servernum python -c "import dfvue"  # [linux]
 
 app:
   entry: python -m ncvue
