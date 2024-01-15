@@ -39,7 +39,7 @@ test:
   imports:
     - ncvue  # [not linux]
   commands:
-    - xvfb-run --auto-servernum python -c "import dfvue"  # [linux]
+    - xvfb-run --auto-servernum python -c "import ncvue"  # [linux]
 
 app:
   entry: python -m ncvue
