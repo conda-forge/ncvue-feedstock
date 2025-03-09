@@ -1,6 +1,6 @@
 {% set name = "ncvue" %}
-{% set version = "6.0" %}
-{% set sha256 = "becdb05ef5df984cc06575f624e777d1568fb35de6a6fca4a2d139c4d494fb24" %}
+{% set version = "6.1" %}
+{% set sha256 = "f46be0a6d6438a43fe8642bce8340804ac87347c7d1ce47a964f2345488bf5ed" %}
 
 
 package:
